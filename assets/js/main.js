@@ -31,7 +31,7 @@ document.querySelectorAll('[data-controls]').forEach(control => {
   next?.addEventListener('click', () => move(1));
 });
 
-const whatsappNumber = '919999999999';
+const whatsappNumber = '919946594360';
 const whatsappMessage = encodeURIComponent('Hi, I saw your furniture collection and would like to know more.');
 
 document.querySelectorAll('[data-whatsapp]').forEach(link => {
