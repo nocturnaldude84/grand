@@ -15,18 +15,19 @@ document.querySelectorAll('.mobile-nav a').forEach(link => {
   });
 });
 
-const furnitureCarousel = document.getElementById('furniture-carousel');
+function setupCarousel(id, currentSelector, totalSelector, prevSelector, nextSelector) {
+  const element = document.getElementById(id);
+  if (!element || typeof Splide === 'undefined') return;
 
-if (furnitureCarousel && typeof Splide !== 'undefined') {
-  const total = furnitureCarousel.querySelectorAll('.splide__slide').length;
-  const totalEl = furnitureCarousel.querySelector('.furniture-total');
-  const currentEl = furnitureCarousel.querySelector('.furniture-current');
-  const prev = furnitureCarousel.querySelector('.furniture-prev');
-  const next = furnitureCarousel.querySelector('.furniture-next');
+  const slides = element.querySelectorAll('.splide__slide').length;
+  const currentEl = element.querySelector(currentSelector);
+  const totalEl = element.querySelector(totalSelector);
+  const prev = element.querySelector(prevSelector);
+  const next = element.querySelector(nextSelector);
 
-  totalEl.textContent = String(total).padStart(2, '0');
+  if (totalEl) totalEl.textContent = String(slides).padStart(2, '0');
 
-  const splide = new Splide(furnitureCarousel, {
+  const splide = new Splide(element, {
     type: 'slide',
     perPage: 1,
     perMove: 1,
@@ -43,7 +44,7 @@ if (furnitureCarousel && typeof Splide !== 'undefined') {
   });
 
   const updateCount = () => {
-    currentEl.textContent = String(splide.index + 1).padStart(2, '0');
+    if (currentEl) currentEl.textContent = String(splide.index + 1).padStart(2, '0');
   };
 
   prev?.addEventListener('click', () => splide.go('<'));
@@ -51,6 +52,9 @@ if (furnitureCarousel && typeof Splide !== 'undefined') {
   splide.on('mounted move', updateCount);
   splide.mount();
 }
+
+setupCarousel('furniture-carousel', '.furniture-current', '.furniture-total', '.furniture-prev', '.furniture-next');
+setupCarousel('video-carousel', '.video-current', '.video-total', '.video-prev', '.video-next');
 
 const whatsappNumber = '919946594360';
 const whatsappMessage = encodeURIComponent('Hi, I saw your furniture collection and would like to know more.');
