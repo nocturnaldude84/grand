@@ -15,11 +15,11 @@
   <header class="site-header" id="home">
     <div class="container nav-wrap">
       <a class="brand" href="#home">Grand<span>.</span></a>
-      <nav class="desktop-nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#collection">Collection</a><a href="#contact">Contact</a></nav>
+      <nav class="desktop-nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#collection">Collection</a><a href="#videos">Videos</a><a href="#contact">Contact</a></nav>
       <a class="nav-whatsapp" href="https://wa.me/919946594360" data-whatsapp target="_blank" rel="noopener">WhatsApp</a>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
-    <div class="mobile-nav" aria-hidden="true"><a href="#home">Home</a><a href="#collection">Collection</a><a href="#contact">Contact</a><a href="https://wa.me/919946594360" data-whatsapp target="_blank" rel="noopener">WhatsApp</a></div>
+    <div class="mobile-nav" aria-hidden="true"><a href="#home">Home</a><a href="#collection">Collection</a><a href="#videos">Videos</a><a href="#contact">Contact</a><a href="https://wa.me/919946594360" data-whatsapp target="_blank" rel="noopener">WhatsApp</a></div>
   </header>
 
   <main>
@@ -31,26 +31,35 @@
       <div class="container">
         <div class="section-heading"><div><p class="eyebrow">Collection</p><h2>Featured Furniture</h2></div></div>
         <div id="furniture-carousel" class="splide furniture-splide" aria-label="Grand Used Furniture collection">
-          <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/black_chairs.png" alt="Black office chairs" loading="lazy"></div></li>
-              <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/black_sofa.png" alt="Black sofa" loading="lazy"></div></li>
-              <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/brown_sofa.png" alt="Brown sofa" loading="lazy"></div></li>
-              <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/dark_brown_sofa.png" alt="Dark brown sofa" loading="lazy"></div></li>
-              <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/red_sofa.png" alt="Red sofa" loading="lazy"></div></li>
-              <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/round_glass_table.png" alt="Round glass table" loading="lazy"></div></li>
-              <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/velvet_sofa.png" alt="Velvet sofa" loading="lazy"></div></li>
-              <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/white_sofa_long.png" alt="Long white sofa" loading="lazy"></div></li>
-              <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/white_sofa_two_seater.png" alt="White two-seater sofa" loading="lazy"></div></li>
-            </ul>
-          </div>
-          <div class="furniture-controls" aria-label="Carousel controls">
-            <button class="furniture-arrow furniture-prev" type="button" aria-label="Previous furniture">←</button>
-            <span class="furniture-count"><span class="furniture-current">01</span> / <span class="furniture-total">09</span></span>
-            <button class="furniture-arrow furniture-next" type="button" aria-label="Next furniture">→</button>
-          </div>
+          <div class="splide__track"><ul class="splide__list">
+            <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/black_chairs.png" alt="Black office chairs" loading="lazy"></div></li>
+            <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/black_sofa.png" alt="Black sofa" loading="lazy"></div></li>
+            <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/brown_sofa.png" alt="Brown sofa" loading="lazy"></div></li>
+            <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/dark_brown_sofa.png" alt="Dark brown sofa" loading="lazy"></div></li>
+            <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/red_sofa.png" alt="Red sofa" loading="lazy"></div></li>
+            <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/round_glass_table.png" alt="Round glass table" loading="lazy"></div></li>
+            <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/velvet_sofa.png" alt="Velvet sofa" loading="lazy"></div></li>
+            <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/white_sofa_long.png" alt="Long white sofa" loading="lazy"></div></li>
+            <li class="splide__slide"><div class="furniture-frame"><img src="assets/images/white_sofa_two_seater.png" alt="White two-seater sofa" loading="lazy"></div></li>
+          </ul></div>
+          <div class="furniture-controls" aria-label="Carousel controls"><button class="furniture-arrow furniture-prev" type="button" aria-label="Previous furniture">←</button><span class="furniture-count"><span class="furniture-current">01</span> / <span class="furniture-total">09</span></span><button class="furniture-arrow furniture-next" type="button" aria-label="Next furniture">→</button></div>
         </div>
         <p class="swipe-hint">Swipe to explore the collection</p>
+      </div>
+    </section>
+
+    <section class="showcase video-section section-pad" id="videos">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">Watch</p><h2>See the Furniture</h2></div></div>
+        <div id="video-carousel" class="splide furniture-splide video-splide" aria-label="Grand Used Furniture videos">
+          <div class="splide__track"><ul class="splide__list">
+            <li class="splide__slide"><div class="video-frame"><div class="media-placeholder">Video 01</div></div></li>
+            <li class="splide__slide"><div class="video-frame"><div class="media-placeholder">Video 02</div></div></li>
+            <li class="splide__slide"><div class="video-frame"><div class="media-placeholder">Video 03</div></div></li>
+          </ul></div>
+          <div class="furniture-controls" aria-label="Video carousel controls"><button class="furniture-arrow video-prev" type="button" aria-label="Previous video">←</button><span class="furniture-count"><span class="video-current">01</span> / <span class="video-total">03</span></span><button class="furniture-arrow video-next" type="button" aria-label="Next video">→</button></div>
+        </div>
+        <p class="swipe-hint">Swipe to explore the videos</p>
       </div>
     </section>
 
