@@ -17,7 +17,7 @@ document.querySelectorAll('.mobile-nav a').forEach(link => {
 
 function setupCarousel(id, currentSelector, totalSelector, prevSelector, nextSelector) {
   const element = document.getElementById(id);
-  if (!element || typeof Splide === 'undefined') return;
+  if (!element || typeof Splide === 'undefined') return null;
 
   const slides = element.querySelectorAll('.splide__slide').length;
   const currentEl = element.querySelector(currentSelector);
@@ -51,10 +51,54 @@ function setupCarousel(id, currentSelector, totalSelector, prevSelector, nextSel
   next?.addEventListener('click', () => splide.go('>'));
   splide.on('mounted move', updateCount);
   splide.mount();
+  return splide;
 }
 
 setupCarousel('furniture-carousel', '.furniture-current', '.furniture-total', '.furniture-prev', '.furniture-next');
-setupCarousel('video-carousel', '.video-current', '.video-total', '.video-prev', '.video-next');
+const videoSplide = setupCarousel('video-carousel', '.video-current', '.video-total', '.video-prev', '.video-next');
+
+const videoSlides = [...document.querySelectorAll('#video-carousel .splide__slide')];
+
+function updateVideoPlayback(activeIndex) {
+  videoSlides.forEach((slide, index) => {
+    const video = slide.querySelector('video');
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.volume = 0;
+
+    if (index === activeIndex) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
+}
+
+if (videoSplide) {
+  videoSplide.on('mounted', () => updateVideoPlayback(videoSplide.index));
+  videoSplide.on('move', newIndex => updateVideoPlayback(newIndex));
+}
+
+document.querySelectorAll('#video-carousel video').forEach(video => {
+  video.muted = true;
+  video.defaultMuted = true;
+  video.volume = 0;
+
+  video.addEventListener('volumechange', () => {
+    video.muted = true;
+    video.defaultMuted = true;
+    video.volume = 0;
+  });
+
+  video.addEventListener('click', event => {
+    event.preventDefault();
+    video.muted = true;
+    video.volume = 0;
+  });
+});
 
 const whatsappNumber = '919946594360';
 const whatsappMessage = encodeURIComponent('Hi, I saw your furniture collection and would like to know more.');
